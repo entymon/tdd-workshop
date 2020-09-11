@@ -5,5 +5,9 @@ test('[] is balanced', () => {
 });
 
 test('([}] is not balanced', () => {
-  expect(balanceBrackets('([}]')).toBeFalse();
+  expect(balanceBrackets('([}]')).toBeFalsy();
+});
+
+test('] is not balanced', () => {
+  expect(balanceBrackets(']')).toBeFalsy();
 });
