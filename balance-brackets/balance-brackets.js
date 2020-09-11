@@ -1,5 +1,6 @@
 function balanceBrackets(string) {
-    let squareBracketsNum = 0
+    let squreOpen = 0
+    let squreClose = 0
 
     if (string === '([}]') {
         return false
@@ -10,13 +11,16 @@ function balanceBrackets(string) {
     }
 
     for(let i = 0; i < string.length; i++) {
-        if(string.charAt(i) === '[' || string.charAt(i) === ']') {
-            squareBracketsNum++
+        if (string.charAt(i) === '[') {
+            squreOpen++
         }
-    }
+        if (string.charAt(i) === ']') {
+            squreClose++
+        }
 
-    if (squareBracketsNum % 2 === 1) {
-        return false;
+        if (squreOpen < squreClose) {
+            return false;
+        }
     }
 
     return true

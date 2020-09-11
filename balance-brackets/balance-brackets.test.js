@@ -19,3 +19,7 @@ test('(] is not balanced', () => {
 test('][ is not balanced', () => {
   expect(balanceBrackets('][')).toBeFalsy();
 });
+
+test('[[[[ is not balanced', () => {
+  expect(balanceBrackets('[[[[')).toBeFalsy();
+});
